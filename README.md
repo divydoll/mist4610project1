@@ -117,6 +117,7 @@ INSERT INTO matchStats (team_id, match_id, shots_per_game, pass_percentage, foul
 ## 1. top 5 players with the most assists along with the teams they play for 
 
 Identifying the top 5 players with the most assists and their respective teams is valuable for managers as it highlights key playmakers in the league, aiding in recruitment decisions, team strategy, and player valuations. Additionally, this data can be used for marketing purposes and to identify areas for player development, ultimately enhancing overall team performance and profitability.
+
 select players.f_name, players.l_name, teams.team_name, playerStats.assists
 from players join playerStats on players.player_id = playerStats.player_id join teams on teams.team_id = players.team_id order by playerStats.assists desc limit 5;
 
