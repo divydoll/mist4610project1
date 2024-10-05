@@ -1,6 +1,20 @@
-use ha_dsm67384;
+Group 9
+JT Warren
+811409735
+https://github.com/JTwarren88/MIST4610gp1
+Charlie Mixson
+811751603
+https://github.com/cjm75885/Project-1
+Cassandra Albright
+811601523
+https://github.com/casalbright/MIST-4610-Project
+Divya Mathew
+811278173
+https://github.com/divydoll/mist4610project1
+
 
 # Data Model
+use ha_dsm67384;
 CREATE TABLE teams ( team_id INT PRIMARY KEY, team_name VARCHAR(45), city VARCHAR(45), league VARCHAR(45), wins INT, draws INT, team_captain_id INT );
 
 CREATE TABLE players ( player_id INT PRIMARY KEY, f_name VARCHAR(45), l_name VARCHAR(45), position VARCHAR(45), nationality VARCHAR(45), team_id INT, FOREIGN KEY (team_id) REFERENCES teams(team_id) );
