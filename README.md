@@ -116,62 +116,62 @@ INSERT INTO matchStats (team_id, match_id, shots_per_game, pass_percentage, foul
 
 ## 1. top 5 players with the most assists along with the teams they play for 
 
-#Identifying the top 5 players with the most assists and their respective teams is valuable for managers as it highlights key playmakers in the league, aiding in recruitment decisions, team strategy, and player valuations. Additionally, this data can be used for marketing purposes and to identify areas for player development, ultimately enhancing overall team performance and profitability.
+Identifying the top 5 players with the most assists and their respective teams is valuable for managers as it highlights key playmakers in the league, aiding in recruitment decisions, team strategy, and player valuations. Additionally, this data can be used for marketing purposes and to identify areas for player development, ultimately enhancing overall team performance and profitability.
 select players.f_name, players.l_name, teams.team_name, playerStats.assists
 from players join playerStats on players.player_id = playerStats.player_id join teams on teams.team_id = players.team_id order by playerStats.assists desc limit 5;
 
 ## 2. top scorers from each club 
 
-#Identifying the top scorers from each club helps managers understand which players are most effective at converting opportunities into goals, guiding decisions on player retention, recruitment, and tactical planning. It also provides insights for marketing and promotional efforts by highlighting standout performers to fans and potential sponsors.
+Identifying the top scorers from each club helps managers understand which players are most effective at converting opportunities into goals, guiding decisions on player retention, recruitment, and tactical planning. It also provides insights for marketing and promotional efforts by highlighting standout performers to fans and potential sponsors.
 
 select players.f_name, players.l_name, teams.team_name, playerStats.goals
 from players join playerStats on players.player_id = playerStats.player_id join teams on teams.team_id = players.team_id WHERE playerStats.goals = ( SELECT MAX(playerStats.goals) FROM playerStats JOIN players ON playerStats.player_id = players.player_id WHERE teams.team_id = players.team_id) order by playerStats.goals desc;
 
 ## 3. Identifying matches where a team scored more goals than their average and what were their results, shots pg and passes pg were 
 
-#Identifying matches where a team scored more goals than their average provides managers with insights into factors contributing to above-average performance, such as tactics, player form, or opponent weaknesses. Analyzing the results, shots per game, and passes per game in these matches can reveal patterns that help optimize strategies, improve training, and make data-driven decisions to replicate such high-scoring outcomes consistently.
+Identifying matches where a team scored more goals than their average provides managers with insights into factors contributing to above-average performance, such as tactics, player form, or opponent weaknesses. Analyzing the results, shots per game, and passes per game in these matches can reveal patterns that help optimize strategies, improve training, and make data-driven decisions to replicate such high-scoring outcomes consistently.
 
 SELECT matches.match_id, teams.team_name, matchStats.result, matchStats.shots_per_game, matchStats.pass_percentage FROM matches JOIN matchStats ON matches.match_id = matchStats.match_id JOIN teams ON teams.team_id = matchStats.team_id WHERE matchStats.goals_scored > ( SELECT AVG(matchStats.goals_scored) FROM matchStats WHERE teams.team_id = matchStats.team_id );
 
 ## 4. The purpose of this query is to provide a detailed breakdown of each player’s performance in different leagues, specifically focusing on their average goals scored per match and average pass percentage. 
 
-#By grouping the data by league and player, and then sorting by league and average goals scored, this query helps identify top performers in each league, making it valuable for comparing player efficiency and impact across different competitions. This information can assist managers, scouts, and analysts in evaluating player consistency and making data-driven decisions regarding player development, transfers, or strategic planning.
+By grouping the data by league and player, and then sorting by league and average goals scored, this query helps identify top performers in each league, making it valuable for comparing player efficiency and impact across different competitions. This information can assist managers, scouts, and analysts in evaluating player consistency and making data-driven decisions regarding player development, transfers, or strategic planning.
 
 SELECT t.league, p.player_id, p.f_name, p.l_name, AVG(ms.goals_scored) AS avg_goals_per_match, AVG(ms.pass_percentage) AS avg_pass_percentage FROM players p JOIN teams t ON p.team_id = t.team_id JOIN playerStats ps ON p.player_id = ps.player_id JOIN match_team_pairings mtp ON t.team_id = mtp.team_id JOIN matchStats ms ON mtp.match_id = ms.match_id GROUP BY t.league, p.player_id, p.f_name, p.l_name ORDER BY t.league, avg_goals_per_match DESC;
 
 ## 5. The purpose of this query is to retrieve the players with the highest number of tackles from each team, along with their first name, last name, and team name. 
 
-#It allows managers and analysts to identify the best defensive players within each team, which is valuable for understanding defensive strengths, player contributions, and for making decisions about player training, positioning, and strategy. By sorting the results by team name, the query provides an organized view of top tacklers across all teams.
+It allows managers and analysts to identify the best defensive players within each team, which is valuable for understanding defensive strengths, player contributions, and for making decisions about player training, positioning, and strategy. By sorting the results by team name, the query provides an organized view of top tacklers across all teams.
 
 select f_name, l_name, team_name, tackles from players join playerStats on players.player_id = playerStats.player_id join teams on players.team_id = teams.team_id where tackles =( select max(tackles) from players as player_sub join playerStats on player_sub.player_id = playerStats.player_id where players.team_id = player_sub.team_id ) Order by team_name;
 
 ## 6. The purpose of this query is to retrieve detailed information about the player Lionel Messi, including his first name, last name, team name, and position. 
 
-#It helps quickly identify specific details about a well-known player and can be used for player profile generation, reporting, or verifying his current team and position, which can be useful for managers, fans, or analysts looking for up-to-date player information.
+It helps quickly identify specific details about a well-known player and can be used for player profile generation, reporting, or verifying his current team and position, which can be useful for managers, fans, or analysts looking for up-to-date player information.
 
 SELECT players.f_name, players.l_name, teams.team_name, players.position FROM players JOIN teams ON players.team_id = teams.team_id WHERE players.f_name = 'Lionel' AND players.l_name = 'Messi';
 
 ## 7. The purpose of this query is to calculate the total number of goals scored by Lionel Messi. 
 
-#It aggregates his goal count across all matches in the playerStats table, providing an overview of his scoring performance. This information can be used for player performance analysis, historical records, or comparisons against other players. It's valuable for managers, analysts, and fans who want to quantify Messi’s goal-scoring achievements.
+It aggregates his goal count across all matches in the playerStats table, providing an overview of his scoring performance. This information can be used for player performance analysis, historical records, or comparisons against other players. It's valuable for managers, analysts, and fans who want to quantify Messi’s goal-scoring achievements.
 
 SELECT SUM(playerStats.goals) FROM playerStats JOIN players ON playerStats.player_id = players.player_id WHERE players.f_name = 'Lionel' AND players.l_name = 'Messi';
 
 ## 8. The purpose of this query is to provide an overview of player performance based on nationality. It shows the number of players and the total number of goals scored by players from each nationality.
 
-#It offers insights into how different nationalities contribute to overall performance. This information can help managers, analysts, and scouts identify strong talent pools by nationality, understand scoring patterns, and inform recruitment or scouting strategies.
+It offers insights into how different nationalities contribute to overall performance. This information can help managers, analysts, and scouts identify strong talent pools by nationality, understand scoring patterns, and inform recruitment or scouting strategies.
 
 select nationality, COUNT(f_name) AS num_players, SUM(goals) AS num_goals from players join playerStats on players.player_id = playerStats.player_id GROUP BY nationality;
 
 ## 9. The purpose of this query is to compare the performance of mentor-mentee coaching pairs based on the number of team wins. It retrieves information about mentee and mentor coaches, along with the number of wins their respective teams have achieved, filtering for cases where the mentee's team has more wins than the mentor's team.
 
-#This analysis can provide insights into the effectiveness of mentorship programs, track mentee development, and highlight successful coaches who have outperformed their mentors.
+This analysis can provide insights into the effectiveness of mentorship programs, track mentee development, and highlight successful coaches who have outperformed their mentors.
 
 select mentee.cf_name, mentee.cl_name, mentee_team.wins, mentor.cf_name, mentor.cl_name, mentor_team.wins from coaches as mentee join coaches as mentor on mentee.coach_id = mentor.assistant_coach_id join teams as mentee_team on mentee.team_id = mentee_team.team_id join teams as mentor_team on mentor.team_id = mentor_team.team_id where mentee_team.wins > mentor_team.wins;
 
 ## 10. Retrieve the teams and the corresponding match ID for teams that competed against each other at Old Trafford on January 15, 2024, at 3:30 PM. 
 
-#Retrieving this information is useful for managers, analysts, and fans to review specific matches played at a particular venue and time, such as Old Trafford. It helps identify key games, analyze performance metrics, and understand the context of team matchups. This data can also be used for scheduling, historical analysis, and preparing for future encounters between these teams at similar venues or conditions.
+Retrieving this information is useful for managers, analysts, and fans to review specific matches played at a particular venue and time, such as Old Trafford. It helps identify key games, analyze performance metrics, and understand the context of team matchups. This data can also be used for scheduling, historical analysis, and preparing for future encounters between these teams at similar venues or conditions.
 
 SELECT team_name, match_team_pairings.match_id FROM teams JOIN match_team_pairings ON teams.team_id = match_team_pairings.team_id JOIN matches ON matches.match_id = match_team_pairings.match_id WHERE matches.match_date = '2024-01-15' AND matches.match_time = '15:30:00' AND matches.match_loc = 'Old Trafford';
 
