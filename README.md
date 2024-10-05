@@ -1,16 +1,9 @@
-Group 9
-JT Warren
-811409735
-https://github.com/JTwarren88/MIST4610gp1
-Charlie Mixson
-811751603
-https://github.com/cjm75885/Project-1
-Cassandra Albright
-811601523
-https://github.com/casalbright/MIST-4610-Project
-Divya Mathew
-811278173
-https://github.com/divydoll/mist4610project1
+# Group 9
+
+JT Warren: https://github.com/JTwarren88/MIST4610gp1
+Charlie Mixson: https://github.com/cjm75885/Project-1
+Cassandra Albright: https://github.com/casalbright/MIST-4610-Project
+
 
 
 # Data Model
