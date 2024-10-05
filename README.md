@@ -1,5 +1,6 @@
 use ha_dsm67384;
 
+# Data Model
 CREATE TABLE teams ( team_id INT PRIMARY KEY, team_name VARCHAR(45), city VARCHAR(45), league VARCHAR(45), wins INT, draws INT, team_captain_id INT );
 
 CREATE TABLE players ( player_id INT PRIMARY KEY, f_name VARCHAR(45), l_name VARCHAR(45), position VARCHAR(45), nationality VARCHAR(45), team_id INT, FOREIGN KEY (team_id) REFERENCES teams(team_id) );
@@ -103,6 +104,8 @@ INSERT INTO matchStats (team_id, match_id, shots_per_game, pass_percentage, foul
 -- Match 30: VfB Stuttgart vs Chicago Fire (19, 30, 15, 86.7, 5, 3, 'Win'), (20, 30, 14, 82.8, 7, 1, 'Loss');
 
 -- Update the assistant_coach_id with appropriate values UPDATE coaches SET assistant_coach_id = 1 WHERE coach_id = 3; UPDATE coaches SET assistant_coach_id = 2 WHERE coach_id = 4; UPDATE coaches SET assistant_coach_id = 1 WHERE coach_id = 5; UPDATE coaches SET assistant_coach_id = 7 WHERE coach_id = 6; UPDATE coaches SET assistant_coach_id = 8 WHERE coach_id = 7; UPDATE coaches SET assistant_coach_id = 7 WHERE coach_id = 8; UPDATE coaches SET assistant_coach_id = 2 WHERE coach_id = 9; UPDATE coaches SET assistant_coach_id = 2 WHERE coach_id = 10; UPDATE coaches SET assistant_coach_id = 9 WHERE coach_id = 11; UPDATE coaches SET assistant_coach_id = 15 WHERE coach_id = 12; UPDATE coaches SET assistant_coach_id = 12 WHERE coach_id = 13; UPDATE coaches SET assistant_coach_id = 12 WHERE coach_id = 14; UPDATE coaches SET assistant_coach_id = 7 WHERE coach_id = 15; UPDATE coaches SET assistant_coach_id = 15 WHERE coach_id = 16; UPDATE coaches SET assistant_coach_id = 15 WHERE coach_id = 17; UPDATE coaches SET assistant_coach_id = 6 WHERE coach_id = 18; UPDATE coaches SET assistant_coach_id = 2 WHERE coach_id = 19; UPDATE coaches SET assistant_coach_id = 1 WHERE coach_id = 20; UPDATE coaches SET assistant_coach_id = NULL WHERE coach_id = 1; UPDATE coaches SET assistant_coach_id = NULL WHERE coach_id = 2;
+
+# Ten Queries
 
 #top 5 players with the most assists along with the teams they play for select players.f_name, players.l_name, teams.team_name, playerStats.assists
 from players join playerStats on players.player_id = playerStats.player_id join teams on teams.team_id = players.team_id order by playerStats.assists desc limit 5;
