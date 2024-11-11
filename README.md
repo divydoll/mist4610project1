@@ -4,7 +4,6 @@ JT Warren: https://github.com/JTwarren88/MIST4610gp1
 Charlie Mixson: https://github.com/cjm75885/Project-1
 Cassandra Albright: https://github.com/casalbright/MIST-4610-Project
 
-![test image](https://raw.githubusercontent.com/divydoll/mist4610project1/refs/heads/main/query1.png)
 
 # Data Model Forward Engineering
 use ha_dsm67384;
@@ -119,6 +118,7 @@ Identifying the top 5 players with the most assists and their respective teams i
 select players.f_name, players.l_name, teams.team_name, playerStats.assists
 from players join playerStats on players.player_id = playerStats.player_id join teams on teams.team_id = players.team_id order by playerStats.assists desc limit 5;
 
+![test image](https://raw.githubusercontent.com/divydoll/mist4610project1/refs/heads/main/query1.png)
 
 
 ## 2. Identify the top scorers from each club 
