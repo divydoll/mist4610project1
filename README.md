@@ -120,6 +120,7 @@ select players.f_name, players.l_name, teams.team_name, playerStats.assists
 from players join playerStats on players.player_id = playerStats.player_id join teams on teams.team_id = players.team_id order by playerStats.assists desc limit 5;
 
 
+
 ## 2. Identify the top scorers from each club 
 
 Identifying the top scorers from each club helps managers understand which players are most effective at converting opportunities into goals, guiding decisions on player retention, recruitment, and tactical planning. It also provides insights for marketing and promotional efforts by highlighting standout performers to fans and potential sponsors.
