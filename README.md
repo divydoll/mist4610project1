@@ -4,7 +4,7 @@ JT Warren: https://github.com/JTwarren88/MIST4610gp1
 Charlie Mixson: https://github.com/cjm75885/Project-1
 Cassandra Albright: https://github.com/casalbright/MIST-4610-Project
 
-
+![test image](https://raw.githubusercontent.com/divydoll/mist4610project1/refs/heads/main/query1.png)
 
 # Data Model Forward Engineering
 use ha_dsm67384;
