@@ -50,65 +50,63 @@ INSERT INTO matches (match_id, match_date, match_time, match_loc) VALUES (1, '20
 
 INSERT INTO match_team_pairings (team_id, match_id) VALUES (1, 1), (2, 1), (3, 2), (4, 2), (5, 3), (6, 3), (7, 4), (8, 4), (9, 5), (10, 5), (11, 6), (12, 6), (13, 7), (14, 7), (15, 8), (16, 8), (17, 9), (18, 9), (19, 10), (20, 10), (1, 11), (3, 11), (5, 12), (7, 12), (9, 13), (11, 13), (13, 14), (15, 14), (17, 15), (19, 15), (2, 16), (4, 16), (6, 17), (8, 17), (10, 18), (12, 18), (14, 19), (16, 19), (18, 20), (20, 20), (1, 21), (2, 21), (3, 22), (4, 22), (5, 23), (6, 23), (7, 24), (8, 24), (9, 25), (10, 25), (11, 26), (12, 26), (13, 27), (14, 27), (15, 28), (16, 28), (17, 29), (18, 29), (19, 30), (20, 30), (1, 31), (3, 31), (5, 32), (7, 32), (9, 33), (11, 33), (13, 34), (15, 34), (17, 35), (19, 35), (2, 36), (4, 36), (6, 37), (8, 37), (10, 38), (12, 38), (14, 39), (16, 39), (18, 40), (20, 40);
 
-INSERT INTO matchStats (team_id, match_id, shots_per_game, pass_percentage, fouls_per_game, goals_scored, result) VALUES -- Match 1: Manchester United vs Real Madrid (1, 1, 15, 85.3, 9, 2, 'Win'), (2, 1, 12, 82.7, 10, 1, 'Loss'),
+INSERT INTO matchStats (team_id, match_id, shots_per_game, pass_percentage, fouls_per_game, goals_scored, result) VALUES -- Match 1: Manchester United vs Real Match 2: Bayern Munich vs LA Galaxy (3, 2, 18, 88.9, 7, 3, 'Win'), (4, 2, 10, 75.4, 11, 1, 'Loss'),
 
--- Match 2: Bayern Munich vs LA Galaxy (3, 2, 18, 88.9, 7, 3, 'Win'), (4, 2, 10, 75.4, 11, 1, 'Loss'),
+Match 3: Liverpool vs Barcelona (5, 3, 14, 83.5, 8, 2, 'Draw'), (6, 3, 14, 84.6, 9, 2, 'Draw'),
 
--- Match 3: Liverpool vs Barcelona (5, 3, 14, 83.5, 8, 2, 'Draw'), (6, 3, 14, 84.6, 9, 2, 'Draw'),
+Match 4: Borussia Dortmund vs NYCFC (7, 4, 13, 80.1, 8, 1, 'Loss'), (8, 4, 16, 87.4, 3, 2, 'Win'),
 
--- Match 4: Borussia Dortmund vs NYCFC (7, 4, 13, 80.1, 8, 1, 'Loss'), (8, 4, 16, 87.4, 3, 2, 'Win'),
+Match 5: Chelsea vs Atletico Madrid (9, 5, 12, 81.2, 12, 1, 'Loss'), (10, 5, 17, 85.7, 2, 2, 'Win'),
 
--- Match 5: Chelsea vs Atletico Madrid (9, 5, 12, 81.2, 12, 1, 'Loss'), (10, 5, 17, 85.7, 2, 2, 'Win'),
+Match 6: RB Leipzig vs Seattle Sounders (11, 6, 18, 89.8, 6, 3, 'Win'), (12, 6, 14, 81.4, 8, 1, 'Loss'),
 
--- Match 6: RB Leipzig vs Seattle Sounders (11, 6, 18, 89.8, 6, 3, 'Win'), (12, 6, 14, 81.4, 8, 1, 'Loss'),
+Match 7: Tottenham Hotspur vs Real Betis (13, 7, 12, 82.5, 7, 1, 'Loss'), (14, 7, 17, 86.2, 2, 2, 'Win'),
 
--- Match 7: Tottenham Hotspur vs Real Betis (13, 7, 12, 82.5, 7, 1, 'Loss'), (14, 7, 17, 86.2, 2, 2, 'Win'),
+Match 8: Eintracht Frankfurt vs Inter Miami (15, 8, 11, 79.4, 10, 0, 'Loss'), (16, 8, 14, 84.2, 8, 1, 'Win'),
 
--- Match 8: Eintracht Frankfurt vs Inter Miami (15, 8, 11, 79.4, 10, 0, 'Loss'), (16, 8, 14, 84.2, 8, 1, 'Win'),
+Match 9: Arsenal vs Sevilla (17, 9, 15, 87.6, 6, 2, 'Win'), (18, 9, 11, 80.8, 9, 1, 'Loss'),
 
--- Match 9: Arsenal vs Sevilla (17, 9, 15, 87.6, 6, 2, 'Win'), (18, 9, 11, 80.8, 9, 1, 'Loss'),
+Match 10: VfB Stuttgart vs Chicago Fire (19, 10, 16, 88.5, 5, 3, 'Win'), (20, 10, 14, 83.2, 7, 1, 'Loss'),
 
--- Match 10: VfB Stuttgart vs Chicago Fire (19, 10, 16, 88.5, 5, 3, 'Win'), (20, 10, 14, 83.2, 7, 1, 'Loss'),
+Match 11: Manchester United vs Bayern Munich (1, 11, 13, 82.1, 10, 1, 'Loss'), (3, 11, 16, 87.5, 8, 3, 'Win'),
 
--- Match 11: Manchester United vs Bayern Munich (1, 11, 13, 82.1, 10, 1, 'Loss'), (3, 11, 16, 87.5, 8, 3, 'Win'),
+Match 12: Liverpool vs Borussia Dortmund (5, 12, 17, 86.3, 7, 3, 'Win'), (7, 12, 12, 79.9, 9, 1, 'Loss'),
 
--- Match 12: Liverpool vs Borussia Dortmund (5, 12, 17, 86.3, 7, 3, 'Win'), (7, 12, 12, 79.9, 9, 1, 'Loss'),
+Match 13: Chelsea vs RB Leipzig (9, 13, 14, 82.5, 8, 2, 'Draw'), (11, 13, 15, 83.6, 8, 2, 'Draw'),
 
--- Match 13: Chelsea vs RB Leipzig (9, 13, 14, 82.5, 8, 2, 'Draw'), (11, 13, 15, 83.6, 8, 2, 'Draw'),
+Match 14: Tottenham Hotspur vs Eintracht Frankfurt (13, 14, 16, 88.1, 6, 2, 'Win'), (15, 14, 11, 78.4, 9, 1, 'Loss'),
 
--- Match 14: Tottenham Hotspur vs Eintracht Frankfurt (13, 14, 16, 88.1, 6, 2, 'Win'), (15, 14, 11, 78.4, 9, 1, 'Loss'),
+Match 15: Arsenal vs Inter Miami (17, 15, 18, 85.5, 6, 3, 'Win'), (16, 15, 13, 80.7, 8, 1, 'Loss'),
 
--- Match 15: Arsenal vs Inter Miami (17, 15, 18, 85.5, 6, 3, 'Win'), (16, 15, 13, 80.7, 8, 1, 'Loss'),
+Match 16: Real Madrid vs LA Galaxy (2, 16, 14, 85.8, 9, 2, 'Win'), (4, 16, 9, 76.5, 10, 1, 'Loss'),
 
--- Match 16: Real Madrid vs LA Galaxy (2, 16, 14, 85.8, 9, 2, 'Win'), (4, 16, 9, 76.5, 10, 1, 'Loss'),
+Match 17: Barcelona vs NYCFC (6, 17, 17, 89.5, 5, 4, 'Win'), (8, 17, 13, 81.4, 7, 2, 'Loss'),
 
--- Match 17: Barcelona vs NYCFC (6, 17, 17, 89.5, 5, 4, 'Win'), (8, 17, 13, 81.4, 7, 2, 'Loss'),
+Match 18: Atletico Madrid vs Seattle Sounders (10, 18, 15, 83.6, 6, 3, 'Win'), (12, 18, 12, 79.1, 9, 1, 'Loss'),
 
--- Match 18: Atletico Madrid vs Seattle Sounders (10, 18, 15, 83.6, 6, 3, 'Win'), (12, 18, 12, 79.1, 9, 1, 'Loss'),
+Match 19: Sevilla vs Chicago Fire (18, 19, 11, 79.8, 11, 1, 'Loss'), (20, 19, 13, 84.9, 8, 2, 'Win'),
 
--- Match 19: Sevilla vs Chicago Fire (18, 19, 11, 79.8, 11, 1, 'Loss'), (20, 19, 13, 84.9, 8, 2, 'Win'),
+Match 20: VfB Stuttgart vs Real Betis (19, 20, 14, 86.4, 8, 2, 'Win'), (14, 20, 13, 81.7, 7, 1, 'Loss'),
 
--- Match 20: VfB Stuttgart vs Real Betis (19, 20, 14, 86.4, 8, 2, 'Win'), (14, 20, 13, 81.7, 7, 1, 'Loss'),
+Match 21: Manchester United vs Real Madrid (1, 21, 12, 81.2, 9, 1, 'Loss'), (2, 21, 16, 88.2, 7, 2, 'Win'),
 
--- Match 21: Manchester United vs Real Madrid (1, 21, 12, 81.2, 9, 1, 'Loss'), (2, 21, 16, 88.2, 7, 2, 'Win'),
+Match 22: Bayern Munich vs LA Galaxy (3, 22, 18, 87.4, 8, 3, 'Win'), (4, 22, 11, 74.5, 9, 1, 'Loss'),
 
--- Match 22: Bayern Munich vs LA Galaxy (3, 22, 18, 87.4, 8, 3, 'Win'), (4, 22, 11, 74.5, 9, 1, 'Loss'),
+Match 23: Liverpool vs Barcelona (5, 23, 16, 85.6, 8, 2, 'Draw'), (6, 23, 14, 82.5, 8, 2, 'Draw'),
 
--- Match 23: Liverpool vs Barcelona (5, 23, 16, 85.6, 8, 2, 'Draw'), (6, 23, 14, 82.5, 8, 2, 'Draw'),
+Match 24: Borussia Dortmund vs NYCFC (7, 24, 12, 78.6, 11, 1, 'Loss'), (8, 24, 15, 84.2, 7, 2, 'Win'),
 
--- Match 24: Borussia Dortmund vs NYCFC (7, 24, 12, 78.6, 11, 1, 'Loss'), (8, 24, 15, 84.2, 7, 2, 'Win'),
+Match 25: Chelsea vs Atletico Madrid (9, 25, 11, 79.3, 12, 1, 'Loss'), (10, 25, 14, 83.9, 6, 2, 'Win'),
 
--- Match 25: Chelsea vs Atletico Madrid (9, 25, 11, 79.3, 12, 1, 'Loss'), (10, 25, 14, 83.9, 6, 2, 'Win'),
+Match 26: RB Leipzig vs Seattle Sounders (11, 26, 16, 86.5, 7, 3, 'Win'), (12, 26, 13, 80.2, 9, 1, 'Loss'),
 
--- Match 26: RB Leipzig vs Seattle Sounders (11, 26, 16, 86.5, 7, 3, 'Win'), (12, 26, 13, 80.2, 9, 1, 'Loss'),
+Match 27: Tottenham Hotspur vs Real Betis (13, 27, 13, 81.7, 7, 1, 'Loss'), (14, 27, 17, 86.9, 5, 2, 'Win'),
 
--- Match 27: Tottenham Hotspur vs Real Betis (13, 27, 13, 81.7, 7, 1, 'Loss'), (14, 27, 17, 86.9, 5, 2, 'Win'),
+Match 28: Eintracht Frankfurt vs Inter Miami (15, 28, 12, 79.4, 9, 0, 'Loss'), (16, 28, 15, 85.3, 6, 2, 'Win'),
 
--- Match 28: Eintracht Frankfurt vs Inter Miami (15, 28, 12, 79.4, 9, 0, 'Loss'), (16, 28, 15, 85.3, 6, 2, 'Win'),
+Match 29: Arsenal vs Sevilla (17, 29, 18, 88.4, 6, 3, 'Win'), (18, 29, 11, 80.1, 8, 1, 'Loss'),
 
--- Match 29: Arsenal vs Sevilla (17, 29, 18, 88.4, 6, 3, 'Win'), (18, 29, 11, 80.1, 8, 1, 'Loss'),
-
--- Match 30: VfB Stuttgart vs Chicago Fire (19, 30, 15, 86.7, 5, 3, 'Win'), (20, 30, 14, 82.8, 7, 1, 'Loss');
+Match 30: VfB Stuttgart vs Chicago Fire (19, 30, 15, 86.7, 5, 3, 'Win'), (20, 30, 14, 82.8, 7, 1, 'Loss');
 
 -- Update the assistant_coach_id with appropriate values UPDATE coaches SET assistant_coach_id = 1 WHERE coach_id = 3; UPDATE coaches SET assistant_coach_id = 2 WHERE coach_id = 4; UPDATE coaches SET assistant_coach_id = 1 WHERE coach_id = 5; UPDATE coaches SET assistant_coach_id = 7 WHERE coach_id = 6; UPDATE coaches SET assistant_coach_id = 8 WHERE coach_id = 7; UPDATE coaches SET assistant_coach_id = 7 WHERE coach_id = 8; UPDATE coaches SET assistant_coach_id = 2 WHERE coach_id = 9; UPDATE coaches SET assistant_coach_id = 2 WHERE coach_id = 10; UPDATE coaches SET assistant_coach_id = 9 WHERE coach_id = 11; UPDATE coaches SET assistant_coach_id = 15 WHERE coach_id = 12; UPDATE coaches SET assistant_coach_id = 12 WHERE coach_id = 13; UPDATE coaches SET assistant_coach_id = 12 WHERE coach_id = 14; UPDATE coaches SET assistant_coach_id = 7 WHERE coach_id = 15; UPDATE coaches SET assistant_coach_id = 15 WHERE coach_id = 16; UPDATE coaches SET assistant_coach_id = 15 WHERE coach_id = 17; UPDATE coaches SET assistant_coach_id = 6 WHERE coach_id = 18; UPDATE coaches SET assistant_coach_id = 2 WHERE coach_id = 19; UPDATE coaches SET assistant_coach_id = 1 WHERE coach_id = 20; UPDATE coaches SET assistant_coach_id = NULL WHERE coach_id = 1; UPDATE coaches SET assistant_coach_id = NULL WHERE coach_id = 2;
 
